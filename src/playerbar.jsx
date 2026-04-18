@@ -85,7 +85,7 @@ const PlayerBar = ({currentBeat, isPlaying, setIsPlaying, handleSelectBeat}) => 
                 <p>3:28</p>
             </div>
 
-            <div className="buy-btn btn-container">
+            <div className=" btn-container">
                 <button>BUY - {currentBeat.price}</button>
             </div>
             <audio ref={audioRef} />

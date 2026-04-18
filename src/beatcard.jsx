@@ -17,15 +17,16 @@ const Beatcard = ({beat, onSelectBeat}) => {
                          <p>{beat.composer}</p>
                     </div>
 
-                    <div className="buy-btn"><button>BUY</button></div>
+                    <div className="play-btn" onClick={()=> onSelectBeat(beat)}><i className="fa-solid fa-play fa-xl" ></i></div>
+                    
                     
                 </div>
 
             </div>
 
             <div className="price-play">
-                <h2>NGN {beat.price} <span>/ lease</span></h2>
-                <div className="play-btn" onClick={()=> onSelectBeat(beat)}><i className="fa-solid fa-play fa-xl" ></i></div>
+                
+                <div className="buy-btn"><button>BUY</button></div>
             </div>
         </div>
     )

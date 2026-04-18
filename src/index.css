@@ -299,8 +299,12 @@ body {
   gap: 1rem;
 }
 
+.buy-btn {
+  width: 100%;
+}
 .buy-btn button {
   padding: 0.3rem 2rem;
+  width: 100%;
   cursor: pointer;
   background: transparent;
   color: var(--accent2);
