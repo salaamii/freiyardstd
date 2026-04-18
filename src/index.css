@@ -443,6 +443,11 @@ body {
   color: var(--muted);
 }
 
+.prev:hover, .next:hover , .play:hover {
+  box-shadow: 0 0 8px var(--accent2);
+  cursor: pointer;
+}
+
 .bar-indicator {
   width: 48rem;
   height: 6px;
