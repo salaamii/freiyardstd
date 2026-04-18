@@ -287,8 +287,29 @@ body {
 }
 .more-de {
   display: flex;
-  gap: 1rem;
+  align-items: center;
+ justify-content: space-between;
+ margin-bottom: 0.6rem;
+
   color: var(--muted);
+}
+
+.de-container {
+  display: flex;
+  gap: 1rem;
+}
+
+.buy-btn button {
+  padding: 0.3rem 2rem;
+  cursor: pointer;
+  background: transparent;
+  color: var(--accent2);
+  border: 1px solid var(--border);
+  transition: border 0.2s ease;
+}
+
+.buy-btn button:hover {
+  border: 1px solid var(--accent2);
 }
 
 .price-play {

@@ -11,9 +11,14 @@ const Beatcard = ({beat, onSelectBeat}) => {
                 <h2>{beat.name}</h2>
 
                 <div className="more-de">
-                    <p>{beat.bpm} BPM</p>   
-                    <p>{beat.key}</p>
-                    <p>{beat.composer}</p>
+                    <div className="de-container">
+                         <p>{beat.bpm} BPM</p>   
+                         <p>{beat.key}</p>
+                         <p>{beat.composer}</p>
+                    </div>
+
+                    <div className="buy-btn"><button>BUY</button></div>
+                    
                 </div>
 
             </div>
