@@ -1,4 +1,4 @@
-const Navbar = () => {
+const Navbar = ({cartOpen, setCartOpen, cartCount}) => {
     return (
         <nav className="navbar">
            
@@ -13,8 +13,8 @@ const Navbar = () => {
                 </ul>
             </div>
 
-            <div className="cart-container">
-                <button>CART (0)</button>
+            <div className="cart-container-bar">
+                <button onClick={() => {setCartOpen(true)}}>CART ({cartCount})</button>
             </div>
 
         </nav>

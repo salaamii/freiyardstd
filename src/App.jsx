@@ -5,12 +5,15 @@ import BeatsPage from './beats';
 import License from './Licenses';
 import Footer from './footer';
 import PlayerBar from './playerbar';
+import Cart from './cart';
 
 
 function App() {
 
   const [currentBeat, setCurrentBeat] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [cartOpen, setCartOpen] = useState(false);
+  const [cart, setCart] = useState([]);
 
   const handleSelectBeat = (beat) => {
     setCurrentBeat(beat);
@@ -20,7 +23,8 @@ function App() {
   return (
     <>
       <div className="App">
-          <Navbar/>
+          <Navbar cartOpen={cartOpen} setCartOpen={setCartOpen} cartCount={cart.length}/>
+          <Cart cartOpen={cartOpen} setCartOpen={setCartOpen} cart={cart}/>
           <Hero/> 
           <BeatsPage onSelectBeat={handleSelectBeat}/>
           <License/>
