@@ -25,7 +25,7 @@ const licenseData = [
 
      {
         id: 3,
-        title: "Exclusive Lease",
+        title: "Exclusive",
         price: "150,000",
         featured: false,
         format: "WAV + Stems (untagged)",

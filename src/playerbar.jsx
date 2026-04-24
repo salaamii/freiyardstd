@@ -2,7 +2,7 @@
 import {useRef, useEffect} from 'react'
 import beatsMeta from './BeatsData';
 
-const PlayerBar = ({currentBeat, isPlaying, setIsPlaying, handleSelectBeat}) => {
+const PlayerBar = ({currentBeat, isPlaying, setIsPlaying, handleSelectBeat, setPendingBeat}) => {
          const audioRef = useRef(null);
 
          useEffect(() => {
@@ -86,7 +86,7 @@ const PlayerBar = ({currentBeat, isPlaying, setIsPlaying, handleSelectBeat}) => 
             </div>
 
             <div className=" btn-container">
-                <button>BUY - {currentBeat.price}</button>
+                <button onClick={() => {setPendingBeat(currentBeat)}}>BUY - {currentBeat.price}</button>
             </div>
             <audio ref={audioRef} />
         </div>

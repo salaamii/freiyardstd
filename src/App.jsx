@@ -6,6 +6,7 @@ import License from './Licenses';
 import Footer from './footer';
 import PlayerBar from './playerbar';
 import Cart from './cart';
+import LicenseModal from './licenseModal';
 
 
 function App() {
@@ -14,6 +15,8 @@ function App() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [cartOpen, setCartOpen] = useState(false);
   const [cart, setCart] = useState([]);
+  const [pendingBeat, setPendingBeat] = useState(null);
+  
 
   const handleSelectBeat = (beat) => {
     setCurrentBeat(beat);
@@ -26,10 +29,11 @@ function App() {
           <Navbar cartOpen={cartOpen} setCartOpen={setCartOpen} cartCount={cart.length}/>
           <Cart cartOpen={cartOpen} setCartOpen={setCartOpen} cart={cart}/>
           <Hero/> 
-          <BeatsPage onSelectBeat={handleSelectBeat}/>
+          <BeatsPage onSelectBeat={handleSelectBeat} setPendingBeat={setPendingBeat}/>
+          <LicenseModal pendingBeat={pendingBeat} setPendingBeat={setPendingBeat}/>
           <License/>
           <Footer/>
-          <PlayerBar currentBeat={currentBeat} isPlaying={isPlaying} setIsPlaying={setIsPlaying} handleSelectBeat={handleSelectBeat}/>
+          <PlayerBar currentBeat={currentBeat} isPlaying={isPlaying} setIsPlaying={setIsPlaying} handleSelectBeat={handleSelectBeat} setPendingBeat={setPendingBeat}/>
        </div>
     </>
   )

@@ -1,4 +1,4 @@
-const Beatcard = ({beat, onSelectBeat}) => {
+const Beatcard = ({beat, onSelectBeat, setPendingBeat}) => {
     return (
         <div className="beatcard">
 
@@ -26,7 +26,7 @@ const Beatcard = ({beat, onSelectBeat}) => {
 
             <div className="price-play">
                 
-                <div className="buy-btn"><button>BUY</button></div>
+                <div className="buy-btn" onClick={()=>{setPendingBeat(beat)}}><button>BUY</button></div>
             </div>
         </div>
     )

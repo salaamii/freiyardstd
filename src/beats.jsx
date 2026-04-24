@@ -1,7 +1,7 @@
 import beatsMeta from "./BeatsData"
 import Beatcard from "./beatcard"
 
-const BeatsPage = ({onSelectBeat}) => {
+const BeatsPage = ({onSelectBeat, setPendingBeat}) => {
 
     return (
 
@@ -16,7 +16,7 @@ const BeatsPage = ({onSelectBeat}) => {
 
             <div className="beats-grid">
                 {beatsMeta.map((beat) => (
-                    <Beatcard key={beat.id} beat={beat} onSelectBeat={onSelectBeat}/>
+                    <Beatcard key={beat.id} beat={beat} onSelectBeat={onSelectBeat} setPendingBeat={setPendingBeat}/>
                 ))}
             </div>
         </section>

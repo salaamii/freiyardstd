@@ -12,7 +12,7 @@ const LicenseCard = ({license}) => {
                 <li>{license.video}</li>
             </ul>
 
-            <button>Select</button>
+            
         </div>
     )
 }
