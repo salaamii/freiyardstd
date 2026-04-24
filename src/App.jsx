@@ -25,7 +25,7 @@ function App() {
  
   return (
     <>
-      <div className="App">
+      <div className={`App ${currentBeat ? 'player-active' : ''}`}>
           <Navbar cartOpen={cartOpen} setCartOpen={setCartOpen} cartCount={cart.length}/>
           <Cart cartOpen={cartOpen} setCartOpen={setCartOpen} cart={cart}/>
           <Hero/> 

@@ -26,6 +26,10 @@ body {
   color: var(--text);
 }
 
+.player-active {
+   padding-bottom: 80px;
+}
+
 
 
 .navbar {
@@ -529,9 +533,12 @@ body {
 }
 
 
+
+
 .player-bar-container {
 
   width: 100%;
+  height: 90px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -593,7 +600,7 @@ body {
   margin: 0px auto;
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 1.5rem;
   align-items: center;
   width: 70%;
   font-family: 'Syne', sans-serif;
@@ -621,9 +628,13 @@ font-family: 'Syne', sans-serif;
   font-weight: 500;
 }
 
+.modal-license {
+  gap: 2rem;
+}
+
 .modal-license h3 {
   font-weight: 800;
-  font-size: 1rem;
+  font-size: 0.85rem;
   text-shadow:0 0 2px var(--accent); ;
   
   font-family: 'Syne';
@@ -632,6 +643,14 @@ font-family: 'Syne', sans-serif;
 .modal-license h1 {
   font-size: 1.2rem;
   font-weight: 700;
+}
+
+.modal-license ul {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.85rem;
+  gap: 0.5rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .beat-details {
