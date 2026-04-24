@@ -629,6 +629,11 @@ font-family: 'Syne', sans-serif;
   font-family: 'Syne';
 }
 
+.modal-license h1 {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
 .beat-details {
   display: flex;
   gap: 1.5rem;
