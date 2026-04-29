@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react'
-import Navbar from './navbar'
-import Hero from './Hero';
-import BeatsPage from './beats';
-import License from './Licenses';
-import Footer from './footer';
-import PlayerBar from './playerbar';
-import Cart from './cart';
-import LicenseModal from './licenseModal';
+import Navbar from './components/navbar'
+import Hero from './components/Hero';
+import BeatsPage from './components/beats';
+import License from './components/Licenses';
+import Footer from './components/footer';
+import PlayerBar from './components/playerbar';
+import Cart from './components/cart';
+import LicenseModal from './components/licenseModal';
 
 
 function App() {
@@ -22,15 +22,27 @@ function App() {
     setCurrentBeat(beat);
     setIsPlaying(true);
   }
+
+  const handleAddCart = (beat, license)=> {
+    const alreadyInCart = cart.some(item => item.beat.id == beat.id);
+
+    if (alreadyInCart) return;
+    setCart (prev => [...prev, {beat, license}]);
+  }
+
+  const removeFromCart = (beat)=> {
+    const removeItem = cart.filter(item=> item.beat.id !== beat.id);
+    setCart(removeItem);
+  }
  
   return (
     <>
       <div className={`App ${currentBeat ? 'player-active' : ''}`}>
           <Navbar cartOpen={cartOpen} setCartOpen={setCartOpen} cartCount={cart.length}/>
-          <Cart cartOpen={cartOpen} setCartOpen={setCartOpen} cart={cart}/>
+          <Cart cartOpen={cartOpen} setCartOpen={setCartOpen} cart={cart} removeFromCart={removeFromCart}/>
           <Hero/> 
           <BeatsPage onSelectBeat={handleSelectBeat} setPendingBeat={setPendingBeat}/>
-          <LicenseModal pendingBeat={pendingBeat} setPendingBeat={setPendingBeat}/>
+          <LicenseModal pendingBeat={pendingBeat} setPendingBeat={setPendingBeat} handleAddCart={handleAddCart} cart={cart}/>
           <License/>
           <Footer/>
           <PlayerBar currentBeat={currentBeat} isPlaying={isPlaying} setIsPlaying={setIsPlaying} handleSelectBeat={handleSelectBeat} setPendingBeat={setPendingBeat}/>

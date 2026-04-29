@@ -1,4 +1,4 @@
-import licenseData from "./Licensedata"
+import licenseData from "../data/Licensedata"
 import LicenseCard from "./licenseCard"
 
 

@@ -1,6 +1,6 @@
 
 import {useRef, useEffect} from 'react'
-import beatsMeta from './BeatsData';
+import beatsMeta from '../data/BeatsData';
 
 const PlayerBar = ({currentBeat, isPlaying, setIsPlaying, handleSelectBeat, setPendingBeat}) => {
          const audioRef = useRef(null);

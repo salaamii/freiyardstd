@@ -1,4 +1,4 @@
-import beatsMeta from "./BeatsData"
+import beatsMeta from "../data/BeatsData"
 import Beatcard from "./beatcard"
 
 const BeatsPage = ({onSelectBeat, setPendingBeat}) => {

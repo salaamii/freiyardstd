@@ -1,6 +1,6 @@
-import licenseData from "./Licensedata"
+import licenseData from "../data/Licensedata";
 
-const LicenseModal = ({pendingBeat, setPendingBeat}) => {
+const LicenseModal = ({pendingBeat, setPendingBeat, handleAddCart}) => {
 
     if (!pendingBeat) return null;
 
@@ -38,7 +38,10 @@ const LicenseModal = ({pendingBeat, setPendingBeat}) => {
                                     <li>{license.video}</li>
                                 </ul>
 
-                                    <button><i className="fa-solid fa-cart-shopping fa-xl"></i></button>
+                                    <button onClick={()=> {
+                                        handleAddCart(pendingBeat, license);
+                                        setPendingBeat(null)
+                                    }}><i className="fa-solid fa-cart-shopping fa-xl"></i></button>
                             </div>
 
                     )})}
