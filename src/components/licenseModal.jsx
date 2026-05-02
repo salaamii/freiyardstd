@@ -29,7 +29,7 @@ const LicenseModal = ({pendingBeat, setPendingBeat, handleAddCart}) => {
                             <div className="licenseCard modal-license" key={license.id}>
                                 
                                 <h3 >{license.title}</h3>
-                                <h1>{license.price}</h1>
+                                <h1>{parseFloat(license.price).toLocaleString()}</h1>
 
                                 <ul>
                                     <li>{license.format}</li>
