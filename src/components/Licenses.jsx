@@ -4,7 +4,7 @@ import LicenseCard from "./licenseCard"
 
 const License = () => {
     return (
-        <section className="license-container">
+        <section id="licenses" className="license-container">
             <div className="section-header">
                 <p>// Pricing</p>
                 <h1>License Options</h1>

@@ -6,8 +6,8 @@ const Navbar = ({cartOpen, setCartOpen, cartCount}) => {
            
             <div className="links">
                 <ul>
-                    <li>BE4TS</li>
-                    <li>LICEN5E5</li>
+                    <li onClick={()=>{document.getElementById('beats').scrollIntoView({behavior:'smooth'})}}>BE4TS</li>
+                    <li onClick={()=>{document.getElementById('licenses').scrollIntoView({behavior: 'smooth'})}}>LICEN5E5</li>
                     <li>5ERV1CE5</li>
                     <li>4BOUT</li>
                 </ul>

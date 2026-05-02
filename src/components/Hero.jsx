@@ -8,7 +8,7 @@ return (
             <div className="browse-cta">
                 <p>Hard-hitting instrumentals built for artists who move different. All mixed to industry standard.</p>
                 <div className="btn-container">
-                    <button>BROWSE BEATS</button>
+                    <button onClick={() =>document.getElementById('beats').scrollIntoView({behavior: 'smooth'})}>BROWSE BEATS</button>
                     <button>FREE BEATS</button>
                 </div>
             </div>

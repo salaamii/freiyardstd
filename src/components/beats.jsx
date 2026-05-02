@@ -16,7 +16,7 @@ const BeatsPage = ({onSelectBeat, setPendingBeat}) => {
         }, [])
     return (
 
-        <section className="beat-card-container">
+        <section id="beats" className="beat-card-container">
             <div className="section-header">
                 <p>// Latest Drops</p>
                 <div className="section-cta">
