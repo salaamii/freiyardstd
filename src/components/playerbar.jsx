@@ -1,14 +1,31 @@
 
-import {useRef, useEffect} from 'react'
+import {useRef, useEffect, useState} from 'react'
 import beatsMeta from '../data/BeatsData';
 
+
+
 const PlayerBar = ({currentBeat, isPlaying, setIsPlaying, handleSelectBeat, setPendingBeat}) => {
+
+    const [duration, setDuration] = useState(0);
+    const [currentTime, setCurrentTime] = useState(0);
+
          const audioRef = useRef(null);
+
+         const formatTime = (seconds) => {
+            const m = Math.floor(seconds/60);
+            const s = Math.floor(seconds % 60);
+            return `${m}:${s < 10 ? `0` + s : s}`
+         }
 
          useEffect(() => {
             if (audioRef.current && currentBeat) {
                 audioRef.current.src = currentBeat.link;
                 audioRef.current.play();
+
+                 audioRef.current.onloadedmetadata = () => { setDuration(audioRef.current.duration);}
+
+                audioRef.current.ontimeupdate = () => { setCurrentTime(audioRef.current.currentTime)}
+
             }
          }, [currentBeat])
 
@@ -16,6 +33,9 @@ const PlayerBar = ({currentBeat, isPlaying, setIsPlaying, handleSelectBeat, setP
             if (!audioRef.current) return;
             isPlaying ? audioRef.current.play() : audioRef.current.pause()
          }, [isPlaying])
+
+
+         
 
 
             const handlePrev = () => {
@@ -44,19 +64,9 @@ const PlayerBar = ({currentBeat, isPlaying, setIsPlaying, handleSelectBeat, setP
                         else {
                             handleSelectBeat(beatsMeta[nextIndex])
                         }
-            }
-            
-
-            
-            
-        
-
+            }  
 
         if (!currentBeat) return null;
-
-       
-
-        
 
        
     return (
@@ -80,9 +90,9 @@ const PlayerBar = ({currentBeat, isPlaying, setIsPlaying, handleSelectBeat, setP
             </div>
 
             <div className="playtime">
-                <p>1:12</p>
+                <p>{formatTime(currentTime)}</p>
                 <div className="bar-indicator"></div>
-                <p>3:28</p>
+                <p>{formatTime(duration)}</p>
             </div>
 
             <div className=" btn-container">

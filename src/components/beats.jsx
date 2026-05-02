@@ -1,8 +1,19 @@
-import beatsMeta from "../data/BeatsData"
 import Beatcard from "./beatcard"
-
+import { useState, useEffect } from "react";
+import {supabase} from '../supabase';
 const BeatsPage = ({onSelectBeat, setPendingBeat}) => {
 
+        const [beats, setBeats] = useState([]);
+
+        useEffect(()=> {
+            async function beatFetch() {
+                const {data, error} = await supabase.from('Beats').select('*');
+                if (error) return console.error(error);
+                 setBeats(data);
+            }
+
+            beatFetch ();
+        }, [])
     return (
 
         <section className="beat-card-container">
@@ -15,7 +26,7 @@ const BeatsPage = ({onSelectBeat, setPendingBeat}) => {
             </div>
 
             <div className="beats-grid">
-                {beatsMeta.map((beat) => (
+                {beats.map((beat) => (
                     <Beatcard key={beat.id} beat={beat} onSelectBeat={onSelectBeat} setPendingBeat={setPendingBeat}/>
                 ))}
             </div>

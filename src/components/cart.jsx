@@ -23,7 +23,7 @@ const Cart = ({cartOpen, setCartOpen, cart, removeFromCart}) => {
                              </div>
                              </div>
                             <div className="price-license">
-                              <p>{item.license.price}</p>
+                              <p>{parseFloat(item.license.price).toLocaleString()}</p>
                               <p>{item.license.title}</p>
                             </div>
 
@@ -39,7 +39,7 @@ const Cart = ({cartOpen, setCartOpen, cart, removeFromCart}) => {
                 </div>
 
                 <div className="checkout">
-                    <p></p>
+                    <p>NGN {cart.reduce((total, item) => total + parseFloat(item.license.price.replace("$", "")), 0).toLocaleString()}</p>
                         <button>Checkout</button>
                 </div>
             </div>

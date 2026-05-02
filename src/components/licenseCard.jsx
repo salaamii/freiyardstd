@@ -3,7 +3,7 @@ const LicenseCard = ({license}) => {
 
         <div className="licenseCard">
             <h3>{license.title}</h3>
-            <h1>{license.price}</h1>
+            <h1>N{parseFloat(license.price).toLocaleString()}</h1>
 
             <ul>
                 <li>{license.format}</li>
