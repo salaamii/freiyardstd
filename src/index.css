@@ -465,7 +465,7 @@ body {
 
 .License-grid {
   display: grid;
-   grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
       gap: 1.2rem;
 
 }
@@ -690,4 +690,237 @@ font-family: 'Syne', sans-serif;
 .close-modal:hover {
   color: var(--accent);
   transition: 0.2s ease;
+}
+
+/* ── Tablet (768px – 1024px) ── */
+@media (max-width: 1024px) {
+  .hero-container h1 {
+    font-size: clamp(2.5rem, 7vw, 6rem);
+  }
+
+  .License-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+
+  .cart-container {
+    width: 55%;
+  }
+
+  .modal-container {
+    width: 85%;
+  }
+
+  .bar-indicator {
+    width: 24rem;
+  }
+}
+
+/* ── Mobile (under 768px) ── */
+@media (max-width: 768px) {
+
+  /* Navbar */
+  .navbar ul {
+    display: none;
+  }
+
+  .navbar {
+    padding: 0.8rem 1rem;
+  }
+
+  .navbar h1 {
+    font-size: 0.85rem;
+  }
+
+  .navbar button {
+    padding: 0.4rem 1rem;
+    font-size: 0.7rem;
+  }
+
+  /* Hero */
+  .hero-container {
+    padding: 1.5rem 1rem 2rem;
+    min-height: 70vh;
+  }
+
+  .hero-container > p {
+    font-size: 0.6rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-container h1 {
+    font-size: clamp(1.8rem, 10vw, 3rem);
+    line-height: 1;
+  }
+
+  .hero-section {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .beats-availability {
+    text-align: left;
+  }
+
+  .beats-availability h2 {
+    font-size: 1.8rem;
+  }
+
+  .browse-cta p {
+    font-size: 0.78rem;
+    line-height: 1.6;
+  }
+
+  .btn-container {
+    flex-direction: column;
+  }
+
+  .btn-container button {
+    font-size: 0.7rem;
+    padding: 0.7rem 1.2rem;
+  }
+
+  /* Beats section */
+  .beat-card-container {
+    padding: 1.2rem 1rem;
+    gap: 1.2rem;
+  }
+
+  .section-cta h1 {
+    font-size: 1.2rem;
+  }
+
+  .beats-grid {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  .beatcard {
+    padding: 0.7rem;
+    gap: 0.6rem;
+    font-size: 0.68rem;
+  }
+
+  .details h2 {
+    font-size: 0.95rem;
+  }
+
+  /* License section */
+  .license-container {
+    padding: 1.2rem 1rem;
+    gap: 1.2rem;
+  }
+
+  .License-grid {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  .licenseCard {
+    padding: 1.2rem;
+    gap: 1rem;
+  }
+
+  .licenseCard h1 {
+    font-size: 1.2rem;
+  }
+
+  .licenseCard h3 {
+    font-size: 0.75rem;
+  }
+
+  .License-grid ul {
+    font-size: 0.78rem;
+  }
+
+  .licenseCard button {
+    font-size: 0.8rem;
+    height: 2.5rem;
+  }
+
+  /* Cart */
+  .cart-container {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .checkout p {
+    font-size: 1rem;
+  }
+
+  .checkout button {
+    font-size: 0.9rem;
+  }
+
+  /* Player bar */
+  .player-bar-container {
+    height: auto;
+    padding: 0.7rem 1rem;
+    gap: 0.5rem;
+    justify-content: space-between;
+  }
+
+  .player-bar-container .details h2 {
+    font-size: 0.8rem;
+  }
+
+  .player-bar-container .more-de {
+    font-size: 0.5rem;
+  }
+
+  .playtime {
+    display: none;
+  }
+
+  .player-bar-container .btn-container {
+    display: none;
+  }
+
+  .media-control {
+    gap: 1.5rem;
+  }
+
+  /* Modal */
+  .modal-container {
+    width: 95%;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .modal-container h1 {
+    font-size: 1.1rem;
+  }
+
+  .beat-details {
+    gap: 0.8rem;
+    font-size: 0.75rem;
+  }
+
+  .select-license-container {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  .modal-license {
+    gap: 1rem;
+  }
+
+  .modal-license h1 {
+    font-size: 1rem;
+  }
+
+  .modal-license ul {
+    font-size: 0.75rem;
+  }
+
+  /* Footer */
+  .footer-container {
+    flex-direction: column;
+    gap: 1.2rem;
+    padding: 1.5rem 1rem;
+  }
+
+  .footer-container p {
+    font-size: 0.7rem;
+  }
 }
